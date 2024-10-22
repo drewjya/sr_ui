@@ -10,7 +10,7 @@ class PaymentMethod extends StatelessWidget {
       children: [
         VText(
           "Select Payment method",
-          textStyle: context.text.title,
+          style: context.text.title,
         ),
         Gap(15.sp),
         Column(

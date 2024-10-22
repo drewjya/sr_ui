@@ -66,7 +66,7 @@ class BankTransferView extends HookConsumerWidget {
                 children: [
                   VText(
                     "Please Transfer To:",
-                    textStyle: context.text.title,
+                    style: context.text.title,
                   ),
                   Gap(15.sp),
                   BankTransferCard(),

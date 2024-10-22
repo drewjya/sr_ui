@@ -21,11 +21,11 @@ class BankTransferWarning extends StatelessWidget {
               gap: Gap(15),
               children: [
                 ItemList(
-                  title:
+                  text:
                       "Top ups made outside of working hours (09.00 - 17.00) will be processed during business hours the next day.",
                 ),
                 ItemList(
-                  title:
+                  text:
                       "Interbank transfers may be subject to fees, please check with the relevant bank/provider.",
                 ),
               ],

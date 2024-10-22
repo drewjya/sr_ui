@@ -10,7 +10,7 @@ class TopUpRegisteredBank extends ConsumerWidget {
       children: [
         VText(
           "Pay using registered bank account",
-          textStyle: context.text.title,
+          style: context.text.title,
           padding: 20.horizontal,
         ),
         Gap(7.5.sp),

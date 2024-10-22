@@ -20,7 +20,7 @@ class RegisterView extends HookConsumerWidget {
                 Center(
                   child: VText(
                     "Welcome",
-                    textStyle: context.text.title.copyWith(
+                    style: context.text.title.copyWith(
                       fontSize: 30.sp,
                     ),
                   ),

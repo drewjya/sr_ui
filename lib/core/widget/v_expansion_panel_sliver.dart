@@ -86,7 +86,7 @@ class VExpansionPanelSliver extends HookWidget {
                   gap: Gap(15.sp),
                   children: items
                       .map(
-                        (e) => ItemList(title: e),
+                        (e) => ItemList(text: e),
                       )
                       .toList(),
                 ),

@@ -17,8 +17,9 @@ class VText extends StatelessWidget {
   final double? textScalableFactor;
 
   final double? letterSpacing;
-  final EdgeInsetsGeometry? margin, padding;
-  final TextStyle? textStyle;
+  final EdgeInsets? margin;
+  final EdgeInsets? padding;
+  final TextStyle? style;
 
   const VText(this.title,
       {this.fontSize,
@@ -38,7 +39,7 @@ class VText extends StatelessWidget {
       this.margin,
       this.padding,
       super.key,
-      this.textStyle});
+      this.style});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +48,7 @@ class VText extends StatelessWidget {
       margin: margin,
       child: Text(
         money! ? title!.currency : title!,
-        style: textStyle ??
+        style: style ??
             TextStyle(
                 fontFamily: fontFamily,
                 color: color,

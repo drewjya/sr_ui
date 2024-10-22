@@ -32,7 +32,7 @@ class StockView extends HookConsumerWidget {
                 ),
                 VText(
                   "Digital Mediatama",
-                  textStyle: context.text.subtitle,
+                  style: context.text.subtitle,
                 ),
               ],
             ),

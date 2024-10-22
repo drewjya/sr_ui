@@ -21,11 +21,11 @@ class RealizedReturnAction extends StatelessWidget {
               children: [
                 VText(
                   "This Week Return",
-                  textStyle: context.text.subtitle,
+                  style: context.text.subtitle,
                 ),
                 VText(
                   "Rp " + "${2000000}".currency,
-                  textStyle: context.text.price,
+                  style: context.text.price,
                 ),
               ],
             ),
@@ -48,7 +48,7 @@ class RealizedReturnAction extends StatelessWidget {
               children: [
                 VText(
                   "This Week",
-                  textStyle: context.text.price.copyWith(
+                  style: context.text.price.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                   ),

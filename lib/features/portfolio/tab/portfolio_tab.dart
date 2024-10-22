@@ -20,14 +20,14 @@ class PortfolioTab extends StatelessWidget {
         Gap(20.sp),
         VText(
           "You're currently not holding any shares",
-          textStyle: context.text.title.copyWith(
+          style: context.text.title.copyWith(
             fontSize: 16.sp,
           ),
           textAlign: TextAlign.center,
         ),
         VText(
           "You have not yet acquired or purchased any\nshares in their account or portfolio.",
-          textStyle: context.text.subtitle,
+          style: context.text.subtitle,
           textAlign: TextAlign.center,
         ),
       ],
@@ -64,21 +64,21 @@ class PortfolioTab extends StatelessWidget {
           ),
           title: VText(
             "BBCA",
-            textStyle: context.text.title.copyWith(fontSize: 16.sp),
+            style: context.text.title.copyWith(fontSize: 16.sp),
           ),
           subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               VText(
                 Format.formatPortofolio(lot: 5, avgPrice: 8625),
-                textStyle: context.text.subtitle,
+                style: context.text.subtitle,
               ),
               VText(
                 Format.formatDot(
                     separator: "-",
                     title: "Total",
                     value: "Rp " + "10000".currency),
-                textStyle: context.text.subtitle,
+                style: context.text.subtitle,
               ),
             ],
           ),
@@ -88,7 +88,7 @@ class PortfolioTab extends StatelessWidget {
             children: [
               VText(
                 "6760".currency,
-                textStyle: context.text.title.copyWith(fontSize: 16.sp),
+                style: context.text.title.copyWith(fontSize: 16.sp),
               ),
               VPriceChange(
                 percentage: .5,

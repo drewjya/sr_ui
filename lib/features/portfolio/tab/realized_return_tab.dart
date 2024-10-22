@@ -20,14 +20,14 @@ class RealizedReturnTab extends StatelessWidget {
         Gap(20.sp),
         VText(
           "No Realized Returns Yet",
-          textStyle: context.text.title.copyWith(
+          style: context.text.title.copyWith(
             fontSize: 16.sp,
           ),
           textAlign: TextAlign.center,
         ),
         VText(
           "You have not had a Realized Return this year.\nMake a transaction to gain profit from stocks.",
-          textStyle: context.text.subtitle,
+          style: context.text.subtitle,
           textAlign: TextAlign.center,
         ),
       ],

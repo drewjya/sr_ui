@@ -9,7 +9,7 @@ class CommunityView extends StatelessWidget {
       body: Center(
         child: VText(
           "Community Page",
-          textStyle: context.text.title,
+          style: context.text.title,
         ),
       ),
     );

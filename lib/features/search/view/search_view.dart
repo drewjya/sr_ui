@@ -37,7 +37,7 @@ class SearchView extends ConsumerWidget {
                         Expanded(
                           child: VText(
                             "History",
-                            textStyle: context.text.title.copyWith(
+                            style: context.text.title.copyWith(
                               fontWeight: FontWeight.w900,
                               fontSize: 20.sp,
                             ),
@@ -120,7 +120,7 @@ class SearchView extends ConsumerWidget {
                     Gap(18.sp),
                     VText(
                       "Trending Stocks",
-                      textStyle: context.text.title.copyWith(
+                      style: context.text.title.copyWith(
                         fontWeight: FontWeight.w900,
                         fontSize: 20.sp,
                       ),

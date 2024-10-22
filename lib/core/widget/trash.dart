@@ -23,7 +23,7 @@ class TrashHomeView extends HookWidget {
         width: double.infinity,
         color: Colors.blue,
       ),
-      body:  RefreshIndicator(
+      body: RefreshIndicator(
         onRefresh: () async {},
         child: Consumer(
           builder: (context, ref, child) {
@@ -79,7 +79,7 @@ class TrashHomeView extends HookWidget {
                                   style: context.text.subtitle),
                               subtitle: VText(
                                 "Ayam",
-                                textStyle: context.text.subtitle,
+                                style: context.text.subtitle,
                               ),
                             )
                           ],

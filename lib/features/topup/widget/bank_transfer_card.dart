@@ -106,8 +106,8 @@ class BankTransferCard extends StatelessWidget {
                     Expanded(
                       child: _ItemTransfer(
                         crossAxisAlignment: CrossAxisAlignment.end,
-                        title: "Owner Name",
-                        value: "Sutrisno Batawi",
+                        title: "Bank Name",
+                        value: "Bank Rakyat Indonesia",
                       ),
                     )
                   ],

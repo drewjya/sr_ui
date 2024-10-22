@@ -137,7 +137,7 @@ class Button extends StatelessWidget {
           child: child ??
               VText(
                 label!,
-                textStyle: style,
+                style: style,
               ),
         ),
       ),

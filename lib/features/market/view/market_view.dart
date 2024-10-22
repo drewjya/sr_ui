@@ -9,7 +9,7 @@ class MarketView extends StatelessWidget {
       body: Center(
         child: VText(
           "Market Page",
-          textStyle: context.text.title,
+          style: context.text.title,
         ),
       ),
     );
