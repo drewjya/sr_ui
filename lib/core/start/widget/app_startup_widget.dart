@@ -42,11 +42,13 @@ class AppStartupWidget extends ConsumerWidget {
         }
       },
     );
-    return Scaffold(
+    return ScaffoldBasic(
+      leading: SizedBox.shrink(),
+      title: SizedBox.shrink(),
       body: state.when(
         data: (data) {
           return const Center(
-            child: Text("Oke"),
+            child: VText("Oke"),
           );
         },
         error: (error, stackTrace) {

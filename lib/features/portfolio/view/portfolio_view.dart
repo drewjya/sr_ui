@@ -20,6 +20,14 @@ class PortfolioView extends HookConsumerWidget {
           icon: Assets.icon.share.svg(),
         ),
       ],
+      background: Align(
+        alignment: Alignment.bottomCenter,
+        child: Container(
+          height: context.height * 0.5,
+          width: double.infinity,
+          color: context.color.backgroundCard,
+        ),
+      ),
       onBack: () => ref.pop(),
       body: RefreshIndicator(
         onRefresh: () async => {},

@@ -1,9 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:sr_ui/core/router/route_path.dart';
-import 'package:sr_ui/core/router/router_notifier.dart';
-import 'package:sr_ui/core/start/provider/app_startup.dart';
+import 'package:sr_ui/core/core.dart';
 
 part 'go_router.g.dart';
 
@@ -23,10 +19,14 @@ GoRouter goRouter(GoRouterRef ref) {
   return GoRouter(
     initialLocation: Routes.splash,
     redirect: (context, state) {
+      log("$state ${appStartupState.isLoading}");
       if (appStartupState.isLoading || appStartupState.hasError) {
         return Routes.startup;
       }
+      log("${state.path} ${appStartupState.isLoading} SINI");
       return null;
+      // return null;
+      // return state.path;
     },
     routes: notifier,
   );

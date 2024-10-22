@@ -1,8 +1,10 @@
 export 'add_to_watchlist_sheet.dart';
+export 'bottom_card_widget.dart';
 export 'button.dart';
 export 'create_watchlist_sheet.dart';
 export 'delete_animation.dart';
 export 'delete_sheet.dart';
+export 'drawer.dart';
 export 'dropdown_filter_chip.dart';
 export 'gap.dart';
 export 'item_list.dart';
@@ -12,6 +14,7 @@ export 'nav_scaffold.dart';
 export 'realized_return_sheet.dart';
 export 'scaffold_basic.dart';
 export 'search_list_tile.dart';
+export 'trash.dart';
 export 'v_checkbox.dart';
 export 'v_choice_chips.dart';
 export 'v_expansion_panel.dart';

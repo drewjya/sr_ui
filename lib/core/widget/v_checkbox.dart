@@ -4,11 +4,13 @@ import 'package:sr_ui/core/core.dart';
 class VCheckbox extends StatelessWidget {
   final bool value;
   final ValueChanged<bool> onChange;
+  final Widget? label;
   final EdgeInsets? padding;
   const VCheckbox({
     Key? key,
     required this.value,
     required this.onChange,
+    this.label,
     this.padding,
   }) : super(key: key);
 
@@ -19,31 +21,64 @@ class VCheckbox extends StatelessWidget {
       padding: padding ?? 8.all,
       backgroundColor: Colors.transparent,
       borderRadius: BorderRadius.circular(4),
-      child: AnimatedContainer(
-        duration: Durations.short3,
-        width: 20.sp,
-        height: 20.sp,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(4),
-          color: value ? context.color.primary : Colors.transparent,
-          border: !value
-              ? Border.all(
-                  color: context.color.grey,
-                )
-              : Border.all(
-                  color: context.color.primary,
-                ),
-        ),
-        child: AnimatedSwitcher(
-          duration: Durations.short3,
-          child: value
-              ? Assets.icon.check.svg(
-                  height: 20.sp,
+      child: label != null
+          ? Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                AnimatedContainer(
+                  duration: Durations.short3,
                   width: 20.sp,
-                )
-              : null,
-        ),
-      ),
+                  height: 20.sp,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    color: value ? context.color.primary : Colors.transparent,
+                    border: !value
+                        ? Border.all(
+                            color: context.color.grey,
+                          )
+                        : Border.all(
+                            color: context.color.primary,
+                          ),
+                  ),
+                  child: AnimatedSwitcher(
+                    duration: Durations.short3,
+                    child: value
+                        ? Assets.icon.check.svg(
+                            height: 20.sp,
+                            width: 20.sp,
+                          )
+                        : null,
+                  ),
+                ),
+                Gap(5.sp),
+                label!,
+              ],
+            )
+          : AnimatedContainer(
+              duration: Durations.short3,
+              width: 20.sp,
+              height: 20.sp,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4),
+                color: value ? context.color.primary : Colors.transparent,
+                border: !value
+                    ? Border.all(
+                        color: context.color.grey,
+                      )
+                    : Border.all(
+                        color: context.color.primary,
+                      ),
+              ),
+              child: AnimatedSwitcher(
+                duration: Durations.short3,
+                child: value
+                    ? Assets.icon.check.svg(
+                        height: 20.sp,
+                        width: 20.sp,
+                      )
+                    : null,
+              ),
+            ),
     );
   }
 }

@@ -7,6 +7,7 @@ import 'package:sr_ui/core/router/page_transition.dart';
 import 'package:sr_ui/core/router/route_path.dart';
 import 'package:sr_ui/core/start/view/splash_view.dart';
 import 'package:sr_ui/core/start/widget/app_startup_widget.dart';
+import 'package:sr_ui/features/account/view/login_view.dart';
 import 'package:sr_ui/features/community/view/community_view.dart';
 import 'package:sr_ui/features/market/view/market_view.dart';
 import 'package:sr_ui/features/notification/view/notification_view.dart';
@@ -19,6 +20,7 @@ import 'package:sr_ui/features/stock/view/stock_view.dart';
 import 'package:sr_ui/features/topup/view/bank_transfer_view.dart';
 import 'package:sr_ui/features/topup/view/top_up_view.dart';
 import 'package:sr_ui/features/watchlist/view/edit_watchlist_view.dart';
+import 'package:sr_ui/features/withdraw/view/withdraw_view.dart';
 
 import '../../features/home/view/view.dart';
 
@@ -41,10 +43,26 @@ List<RouteBase> routeList(RouteListRef ref) {
       ),
     ),
     GoRoute(
+      path: Routes.login,
+      pageBuilder: (context, state) => MaterialPage(
+        key: state.pageKey,
+        child: const LoginView(),
+      ),
+    ),
+    GoRoute(
       path: Routes.topUpScreen,
       pageBuilder: (context, state) {
         return MaterialPage(
           child: const TopUpView(),
+          key: state.pageKey,
+        );
+      },
+    ),
+    GoRoute(
+      path: Routes.withdraw,
+      pageBuilder: (context, state) {
+        return MaterialPage(
+          child: const WithdrawView(),
           key: state.pageKey,
         );
       },

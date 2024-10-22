@@ -6,19 +6,19 @@ class SplashView extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     useEffect(() {
-      Future.delayed(
-        Durations.medium1,
-        () {
-          ref.router.go(Routes.home);
-        },
-      );
+      Future.delayed(Durations.medium1, () {
+        log("Masuk");
+        ref.router.go(Routes.login);
+      });
 
-      return;
+      return () {
+        log("Dispose");
+      };
     }, []);
 
-    return const Scaffold(
+    return NavScaffold(
       body: Center(
-        child: Text("Splash Screen"),
+        child: VText("Splash Screen"),
       ),
     );
   }

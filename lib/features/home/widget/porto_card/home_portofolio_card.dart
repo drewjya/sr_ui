@@ -213,15 +213,15 @@ class _HomePortfolioCardState extends State<HomePortfolioCard> {
               child: Consumer(
                 builder: (context, ref, child) {
                   final items = [
-                    _Item(
+                    BottomCardItem(
                         asset: Assets.icon.topUp,
                         title: "Top Up",
                         routeName: Routes.topUpScreen),
-                    _Item(
+                    BottomCardItem(
                         asset: Assets.icon.portofolio,
                         title: "Portfolio",
                         routeName: Routes.portfolio),
-                    _Item(
+                    BottomCardItem(
                       asset: Assets.icon.share,
                       title: "Share Cuan",
                       routeName: Routes.shareCuan,
@@ -233,7 +233,7 @@ class _HomePortfolioCardState extends State<HomePortfolioCard> {
                     children: items.map(
                       (e) {
                         return Expanded(
-                          child: _ThirdItem(
+                          child: BottomCardWidget(
                             asset: e.asset,
                             title: e.title,
                             onTap: () {

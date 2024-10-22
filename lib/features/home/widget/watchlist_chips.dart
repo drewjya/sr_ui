@@ -54,6 +54,7 @@ class _WatchlistChipsState extends State<WatchlistChips> {
   @override
   Widget build(BuildContext context) {
     final isDragged = useState(false);
+    log("Rebuild too");
     return Container(
       height: (34).sp,
       color: context.color.backgroundCard,
@@ -115,7 +116,7 @@ class _WatchlistChipsState extends State<WatchlistChips> {
               itemCount: dummy.length,
               itemBuilder: (context, index) {
                 final item = dummy[index];
-                // return Gap(8.sp);
+                log("REBUILD HAH");
                 return Consumer(
                   key: Key(item),
                   builder: (context, ref, child) {
@@ -123,7 +124,6 @@ class _WatchlistChipsState extends State<WatchlistChips> {
                       index: index,
                       item: item,
                       onDoubleTap: () {
-                        log("Doble click");
                         isDragged.value = false;
                       },
                       onTapDelete: () {
@@ -148,7 +148,6 @@ class _WatchlistChipsState extends State<WatchlistChips> {
                         isDragged.value = true;
                       },
                       onTap: () {
-                        log("CLICK ${DateTime.now()}");
                         if (isDragged.value) {
                           isDragged.value = false;
                           return;
@@ -156,7 +155,6 @@ class _WatchlistChipsState extends State<WatchlistChips> {
                         ref
                             .read(selectedWatchlistProvider.notifier)
                             .update((state) => item);
-                        log("CLICK ${DateTime.now()}");
                       },
                       end: index == dummy.length - 1,
                     );
@@ -195,11 +193,9 @@ class WatchlistChipItem extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final active = ref.watch(selectedWatchlistProvider.select(
-      (value) => value == item,
-    ));
-    log("REBUILD $item");
-    log("REBUILD ${DateTime.now()}");
+    final active =
+        ref.watch(selectedWatchlistProvider.select((value) => value == item));
+
     return Container(
       color: context.color.backgroundCard,
       padding: EdgeInsets.only(right: end ? 0 : 8.sp),

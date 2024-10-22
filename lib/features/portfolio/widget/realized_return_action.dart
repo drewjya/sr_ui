@@ -15,20 +15,21 @@ class RealizedReturnAction extends StatelessWidget {
       color: context.color.backgroundCard,
       child: Row(
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              VText(
-                "This Week Return",
-                textStyle: context.text.subtitle,
-              ),
-              VText(
-                "Rp " + "${2000000}".currency,
-                textStyle: context.text.price,
-              ),
-            ],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                VText(
+                  "This Week Return",
+                  textStyle: context.text.subtitle,
+                ),
+                VText(
+                  "Rp " + "${2000000}".currency,
+                  textStyle: context.text.price,
+                ),
+              ],
+            ),
           ),
-          Spacer(),
           Button.secondary(
             onTap: () {
               context.showBottomSheet(

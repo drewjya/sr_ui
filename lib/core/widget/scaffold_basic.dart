@@ -9,6 +9,7 @@ class ScaffoldBasic extends StatelessWidget {
     this.title,
     required this.body,
     this.onBack,
+    this.background,
     this.leading,
     this.actions = const [],
   })  : assert(
@@ -23,6 +24,7 @@ class ScaffoldBasic extends StatelessWidget {
         super(key: key);
   final String? titleText;
   final Widget? title;
+  final Widget? background;
   final Widget body;
   final VoidCallback? onBack;
   final Widget? leading;
@@ -54,6 +56,7 @@ class ScaffoldBasic extends StatelessWidget {
                     ),
                   ),
                 ),
+                if (background != null) background!,
                 Padding(
                   padding: EdgeInsets.only(top: context.top),
                   child: Column(

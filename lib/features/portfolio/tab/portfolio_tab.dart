@@ -32,17 +32,73 @@ class PortfolioTab extends StatelessWidget {
         ),
       ],
     );
-    return SliverFillRemaining(
-      hasScrollBody: false,
-      child: emptyWidget,
-      // child: Column(
-      //   children: List.generate(
-      //     100,
-      //     (index) => Container(
-      //       child: Center(child: Text("Return")),
-      //     ),
-      //   ),
-      // ),
+    // return SliverFillRemaining(
+    //   hasScrollBody: false,
+    //   // child: emptyWidget,
+    //   child: Column(
+    //     children: List.generate(
+    //       100,
+    //       (index) {
+    //         log("Build $index");
+    //         return Container(
+    //           child: Center(child: Text("Return")),
+    //         );
+    //       },
+    //     ),
+    //   ),
+    // );
+    return SliverList.builder(
+      itemCount: 10,
+      itemBuilder: (context, index) {
+        log("Build $index");
+        return VListTile(
+          onTap: () {},
+          leading: Padding(
+            padding: EdgeInsets.only(right: 8.0.sp),
+            child: CircleAvatar(
+              radius: 25.r,
+              child: Image.network(
+                networkImage,
+              ),
+            ),
+          ),
+          title: VText(
+            "BBCA",
+            textStyle: context.text.title.copyWith(fontSize: 16.sp),
+          ),
+          subtitle: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              VText(
+                Format.formatPortofolio(lot: 5, avgPrice: 8625),
+                textStyle: context.text.subtitle,
+              ),
+              VText(
+                Format.formatDot(
+                    separator: "-",
+                    title: "Total",
+                    value: "Rp " + "10000".currency),
+                textStyle: context.text.subtitle,
+              ),
+            ],
+          ),
+          trailing: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              VText(
+                "6760".currency,
+                textStyle: context.text.title.copyWith(fontSize: 16.sp),
+              ),
+              VPriceChange(
+                percentage: .5,
+                price: 100,
+                hasRp: false,
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

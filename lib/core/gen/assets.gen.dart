@@ -78,6 +78,9 @@ class $AssetsIconGen {
   /// File path: assets/icon/more.svg
   SvgGenImage get more => const SvgGenImage('assets/icon/more.svg');
 
+  /// File path: assets/icon/mutasi.svg
+  SvgGenImage get mutasi => const SvgGenImage('assets/icon/mutasi.svg');
+
   /// File path: assets/icon/my_stocks_empty.svg
   SvgGenImage get myStocksEmpty =>
       const SvgGenImage('assets/icon/my_stocks_empty.svg');
@@ -128,6 +131,9 @@ class $AssetsIconGen {
   /// File path: assets/icon/trash.svg
   SvgGenImage get trash => const SvgGenImage('assets/icon/trash.svg');
 
+  /// File path: assets/icon/withdraw.svg
+  SvgGenImage get withdraw => const SvgGenImage('assets/icon/withdraw.svg');
+
   /// List of all assets
   List<dynamic> get values => [
         noise,
@@ -149,6 +155,7 @@ class $AssetsIconGen {
         market,
         marketInactive,
         more,
+        mutasi,
         myStocksEmpty,
         noBookmark,
         order,
@@ -162,14 +169,26 @@ class $AssetsIconGen {
         srPoin,
         tickDouble,
         topUp,
-        trash
+        trash,
+        withdraw
       ];
+}
+
+class $AssetsImageGen {
+  const $AssetsImageGen();
+
+  /// File path: assets/image/profile.webp
+  AssetGenImage get profile => const AssetGenImage('assets/image/profile.webp');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [profile];
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsIconGen icon = $AssetsIconGen();
+  static const $AssetsImageGen image = $AssetsImageGen();
 }
 
 class AssetGenImage {

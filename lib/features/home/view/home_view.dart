@@ -12,6 +12,7 @@ class HomeView extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scrollController = useScrollController();
+    final loginInit = useState(false);
 
     final tabController = useTabController(initialLength: 5);
     ref.listen(
@@ -22,7 +23,6 @@ class HomeView extends HookConsumerWidget {
       },
     );
 
-    log("Build ${DateTime.now()}");
     return NavScaffold(
       appBar: Padding(
         padding: EdgeInsets.symmetric(vertical: 10),

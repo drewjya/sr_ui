@@ -40,6 +40,7 @@ abstract class Routes {
   static const loginInvestScreen = "/loginInvestScreen";
 
   static const topUpScreen = '/top-up';
+  static const withdraw = '/withdraw';
   static const bankTransfers = '/bank-transfers';
 
   static const changePinScreen = "/change_pin";

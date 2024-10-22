@@ -32,9 +32,27 @@ class RealizedReturnTab extends StatelessWidget {
         ),
       ],
     );
-    return SliverFillRemaining(
-      hasScrollBody: false,
-      child: emptyWidget,
+    // return SliverFillRemaining(
+    //   hasScrollBody: false,
+    //   child: emptyWidget,
+    // );
+
+    return SliverList.builder(
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 20.sp,
+            vertical: 15.sp,
+          ),
+          child: Row(
+            children: [
+              VText("Sep $index"),
+              Expanded(child: Center(child: VText("+Rp$index"))),
+              VText("+$index"),
+            ],
+          ),
+        );
+      },
     );
   }
 }
