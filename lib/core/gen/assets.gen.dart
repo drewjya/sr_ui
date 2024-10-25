@@ -40,6 +40,9 @@ class $AssetsIconGen {
   /// File path: assets/icon/bookmark.svg
   SvgGenImage get bookmark => const SvgGenImage('assets/icon/bookmark.svg');
 
+  /// File path: assets/icon/camera.svg
+  SvgGenImage get camera => const SvgGenImage('assets/icon/camera.svg');
+
   /// File path: assets/icon/check.svg
   SvgGenImage get check => const SvgGenImage('assets/icon/check.svg');
 
@@ -172,11 +175,19 @@ class $AssetsIconGen {
   SvgGenImage get transactionSummary =>
       const SvgGenImage('assets/icon/transaction_summary.svg');
 
+  /// File path: assets/icon/transaction_summary_sheet.svg
+  SvgGenImage get transactionSummarySheet =>
+      const SvgGenImage('assets/icon/transaction_summary_sheet.svg');
+
   /// File path: assets/icon/trash.svg
   SvgGenImage get trash => const SvgGenImage('assets/icon/trash.svg');
 
   /// File path: assets/icon/withdraw.svg
   SvgGenImage get withdraw => const SvgGenImage('assets/icon/withdraw.svg');
+
+  /// File path: assets/icon/withdraw_sheet.svg
+  SvgGenImage get withdrawSheet =>
+      const SvgGenImage('assets/icon/withdraw_sheet.svg');
 
   /// File path: assets/icon/x.svg
   SvgGenImage get x => const SvgGenImage('assets/icon/x.svg');
@@ -194,6 +205,7 @@ class $AssetsIconGen {
         bantuan,
         beriIde,
         bookmark,
+        camera,
         check,
         chip,
         community,
@@ -232,8 +244,10 @@ class $AssetsIconGen {
         tnc,
         topUp,
         transactionSummary,
+        transactionSummarySheet,
         trash,
         withdraw,
+        withdrawSheet,
         x,
         youtube
       ];

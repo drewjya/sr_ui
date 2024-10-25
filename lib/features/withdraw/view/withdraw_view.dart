@@ -62,7 +62,15 @@ class WithdrawView extends ConsumerWidget {
                 Padding(
                   padding: 20.horizontal,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.showBottomSheet(
+                        isScrollControlled: true,
+                        useRootNavigator: false,
+                        builder: (context) => WithdrawSheet(
+                          onAccept: () {},
+                        ),
+                      );
+                    },
                     child: Center(child: Text("CONTINUE")),
                   ),
                 ),

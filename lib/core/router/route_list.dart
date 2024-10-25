@@ -8,8 +8,15 @@ import 'package:sr_ui/core/router/page_transition.dart';
 import 'package:sr_ui/core/router/route_path.dart';
 import 'package:sr_ui/core/start/view/splash_view.dart';
 import 'package:sr_ui/core/start/widget/app_startup_widget.dart';
+import 'package:sr_ui/features/account/view/account_security_view.dart';
+import 'package:sr_ui/features/account/view/bank_account_view.dart';
+import 'package:sr_ui/features/account/view/dictionary_view.dart';
+import 'package:sr_ui/features/account/view/e_statement_view.dart';
+import 'package:sr_ui/features/account/view/give_idea_view.dart';
+import 'package:sr_ui/features/account/view/help_view.dart';
 import 'package:sr_ui/features/account/view/login_view.dart';
 import 'package:sr_ui/features/account/view/personal_detail_view.dart';
+import 'package:sr_ui/features/account/view/tnc_view.dart';
 import 'package:sr_ui/features/community/view/community_view.dart';
 import 'package:sr_ui/features/market/view/market_view.dart';
 import 'package:sr_ui/features/mutasi/view/mutasi_view.dart';
@@ -54,12 +61,59 @@ List<RouteBase> routeList(Ref ref) {
     ),
     GoRoute(
       path: Routes.personalDetail,
-      pageBuilder: (context, state) {
-        return MaterialPage(
-          child: const PersonalDetailView(),
-          key: state.pageKey,
-        );
-      },
+      pageBuilder: (context, state) => MaterialPage(
+        child: const PersonalDetailView(),
+        key: state.pageKey,
+      ),
+    ),
+    GoRoute(
+      path: Routes.manageBankAccount,
+      pageBuilder: (context, state) => MaterialPage(
+        child: const BankAccountView(),
+        key: state.pageKey,
+      ),
+    ),
+    GoRoute(
+      path: Routes.tnc,
+      pageBuilder: (context, state) => MaterialPage(
+        child: const TNCVIew(),
+        key: state.pageKey,
+      ),
+    ),
+    GoRoute(
+      path: Routes.help,
+      pageBuilder: (context, state) => MaterialPage(
+        child: const HelpView(),
+        key: state.pageKey,
+      ),
+    ),
+    GoRoute(
+      path: Routes.giveIdea,
+      pageBuilder: (context, state) => MaterialPage(
+        child: const GiveIdeaView(),
+        key: state.pageKey,
+      ),
+    ),
+    GoRoute(
+      path: Routes.accountSecurity,
+      pageBuilder: (context, state) => MaterialPage(
+        child: const AccountSecurityView(),
+        key: state.pageKey,
+      ),
+    ),
+    GoRoute(
+      path: Routes.eStatement,
+      pageBuilder: (context, state) => MaterialPage(
+        child: const EStatementView(),
+        key: state.pageKey,
+      ),
+    ),
+    GoRoute(
+      path: Routes.dictionary,
+      pageBuilder: (context, state) => MaterialPage(
+        child: const DictionaryView(),
+        key: state.pageKey,
+      ),
     ),
     GoRoute(
       path: Routes.topUpScreen,

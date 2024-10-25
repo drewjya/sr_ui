@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:sr_ui/core/core.dart';
-import 'package:sr_ui/core/widget/logout_sheet.dart';
+import 'package:sr_ui/core/widget/transaction_summary_sheet.dart';
 import 'package:sr_ui/features/profile/widget/profile_card.dart';
 
 class _ProfileItem {
@@ -31,14 +31,14 @@ class _ProfileItem {
   }
 }
 
-class ProfileView extends StatefulWidget {
+class ProfileView extends ConsumerStatefulWidget {
   const ProfileView({super.key});
 
   @override
-  State<ProfileView> createState() => _ProfileViewState();
+  ConsumerState<ProfileView> createState() => _ProfileViewState();
 }
 
-class _ProfileViewState extends State<ProfileView> {
+class _ProfileViewState extends ConsumerState<ProfileView> {
   bool state = false;
   List<_ProfileItem> item = [];
   @override
@@ -50,37 +50,87 @@ class _ProfileViewState extends State<ProfileView> {
   Widget build(BuildContext context) {
     item = [
       _ProfileItem(
-          label: "Personal Details",
-          icon: Assets.icon.personalDetail,
-          onTap: () {}),
+        label: "Personal Details",
+        icon: Assets.icon.personalDetail,
+        onTap: () {
+          ref.router.push(Routes.personalDetail);
+        },
+      ),
       _ProfileItem(
-          label: "Manage Bank Account", icon: Assets.icon.bank, onTap: () {}),
+        label: "Manage Bank Account",
+        icon: Assets.icon.bank,
+        onTap: () {
+          ref.router.push(Routes.manageBankAccount);
+        },
+      ),
       _ProfileItem(
         label: "Transaction Summary",
         icon: Assets.icon.transactionSummary,
         onSwitch: (value) {
-          log("$state");
-          state = value;
-          ;
-          log("$state");
-          setState(() {});
+          if (!value) {
+            context.showBottomSheet(
+              isScrollControlled: true,
+              useRootNavigator: false,
+              builder: (context) => Consumer(
+                builder: (context, ref, child) {
+                  return TransactionSummarySheet(
+                    onAccept: () {
+                      state = value;
+                      setState(() {});
+                      ref.pop();
+                    },
+                  );
+                },
+              ),
+            );
+          } else {
+            state = value;
+            setState(() {});
+          }
         },
       ),
       _ProfileItem(
-          label: "Account Security",
-          icon: Assets.icon.accountSecurity,
-          onTap: () {}),
+        label: "Account Security",
+        icon: Assets.icon.accountSecurity,
+        onTap: () {
+          ref.router.push(Routes.accountSecurity);
+        },
+      ),
       _ProfileItem(
-          label: "E-Statement", icon: Assets.icon.eStatement, onTap: () {}),
+        label: "E-Statement",
+        icon: Assets.icon.eStatement,
+        onTap: () {
+          ref.router.push(Routes.eStatement);
+        },
+      ),
       _ProfileItem(
-          label: "Investment Dictionary",
-          icon: Assets.icon.dictionary,
-          onTap: () {}),
-      _ProfileItem(label: "Help", icon: Assets.icon.bantuan, onTap: () {}),
+        label: "Investment Dictionary",
+        icon: Assets.icon.dictionary,
+        onTap: () {
+          ref.router.push(Routes.dictionary);
+        },
+      ),
       _ProfileItem(
-          label: "Terms and Condition", icon: Assets.icon.tnc, onTap: () {}),
+        label: "Help",
+        icon: Assets.icon.bantuan,
+        onTap: () {
+          ref.router.push(Routes.help);
+        },
+      ),
       _ProfileItem(
-          label: "Give Ideas", icon: Assets.icon.beriIde, onTap: () {}),
+        label: "Terms and Condition",
+        icon: Assets.icon.tnc,
+        onTap: () {
+          ref.router.push(Routes.tnc);
+        },
+      ),
+      _ProfileItem(
+        label: "Give Ideas",
+        icon: Assets.icon.beriIde,
+        onTap: () {
+          ref.router.push(Routes.giveIdea);
+        },
+      ),
       _ProfileItem(
           label: "Logout",
           icon: Assets.icon.logout,
@@ -115,13 +165,21 @@ class _ProfileViewState extends State<ProfileView> {
                 return Column(
                   children: [
                     VListTile(
-                      onTap: curr.onTap != null ? () {} : null,
+                      onTap: curr.onTap != null
+                          ? () {
+                              curr.onTap?.call();
+                            }
+                          : null,
                       backgroundColor: context.color.backgroundCard,
                       borderRadius: index == 0
                           ? BorderRadius.vertical(
                               top: Radius.circular(20),
                             )
                           : null,
+                      padding: 20.horizontal.copyWith(
+                            top: 5.sp,
+                            bottom: 5.sp,
+                          ),
                       leading: Padding(
                         padding: EdgeInsets.only(right: 9.sp),
                         child: CircleAvatar(
@@ -179,24 +237,28 @@ class _ProfileViewState extends State<ProfileView> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Button.secondary(
+                            onTap: () {},
                             padding: 13.all,
                             borderRadius: BorderRadius.circular(100),
                             child:
                                 Assets.icon.ig.svg(height: 24.sp, width: 24.sp),
                           ),
                           Button.secondary(
+                            onTap: () {},
                             padding: 13.all,
                             borderRadius: BorderRadius.circular(100),
                             child: Assets.icon.youtube
                                 .svg(height: 24.sp, width: 24.sp),
                           ),
                           Button.secondary(
+                            onTap: () {},
                             padding: 13.all,
                             borderRadius: BorderRadius.circular(100),
                             child: Assets.icon.tiktok
                                 .svg(height: 24.sp, width: 24.sp),
                           ),
                           Button.secondary(
+                            onTap: () {},
                             padding: 13.all,
                             borderRadius: BorderRadius.circular(100),
                             child:

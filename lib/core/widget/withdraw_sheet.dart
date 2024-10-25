@@ -1,9 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:sr_ui/core/core.dart';
 
-class LogoutSheet extends HookConsumerWidget {
+class WithdrawSheet extends HookConsumerWidget {
   final VoidCallback onAccept;
-  const LogoutSheet({
+  const WithdrawSheet({
     Key? key,
     required this.onAccept,
   }) : super(key: key);
@@ -20,12 +20,12 @@ class LogoutSheet extends HookConsumerWidget {
           Gap(10.sp),
           BackgroundIconSvg(
             padding: 20.sp,
-            asset: Assets.icon.delete,
+            asset: Assets.icon.withdrawSheet,
             size: 120.sp,
           ),
           Gap(20.sp),
           VText(
-            "Are you absolutely certain you want to log out of your account?",
+            "If you buy stocks again, you can make money! Last chance, are you sure you want to withdraw?",
             fontWeight: FontWeight.w800,
             fontSize: 20.sp,
             textAlign: TextAlign.center,
@@ -48,7 +48,7 @@ class LogoutSheet extends HookConsumerWidget {
                 child: ElevatedButton(
                   onPressed: onAccept,
                   child: Center(
-                    child: VText("YES"),
+                    child: VText("CONFIRM"),
                   ),
                 ),
               ),

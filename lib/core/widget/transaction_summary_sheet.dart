@@ -1,9 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:sr_ui/core/core.dart';
 
-class LogoutSheet extends HookConsumerWidget {
+class TransactionSummarySheet extends HookConsumerWidget {
   final VoidCallback onAccept;
-  const LogoutSheet({
+  const TransactionSummarySheet({
     Key? key,
     required this.onAccept,
   }) : super(key: key);
@@ -20,12 +20,12 @@ class LogoutSheet extends HookConsumerWidget {
           Gap(10.sp),
           BackgroundIconSvg(
             padding: 20.sp,
-            asset: Assets.icon.delete,
+            asset: Assets.icon.transactionSummarySheet,
             size: 120.sp,
           ),
           Gap(20.sp),
           VText(
-            "Are you absolutely certain you want to log out of your account?",
+            "By disabling Transaction Summary, you will not receive the Transaction Summary pop up when making stock transactions. Are you sure you want to disable Transaction Summary?",
             fontWeight: FontWeight.w800,
             fontSize: 20.sp,
             textAlign: TextAlign.center,
@@ -48,7 +48,7 @@ class LogoutSheet extends HookConsumerWidget {
                 child: ElevatedButton(
                   onPressed: onAccept,
                   child: Center(
-                    child: VText("YES"),
+                    child: VText("CONFIRM"),
                   ),
                 ),
               ),
