@@ -11,7 +11,7 @@ class WithdrawSheet extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      color: context.color.backgroundCard,
+      color: context.color.card,
       padding: 20.all,
       child: Column(
         mainAxisSize: MainAxisSize.min,

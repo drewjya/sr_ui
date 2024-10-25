@@ -94,7 +94,7 @@ class BankTransferCard extends StatelessWidget {
                       top: 10.sp,
                       bottom: 10.sp,
                     ),
-                color: context.color.backgroundCard,
+                color: context.color.card,
                 child: Row(
                   children: [
                     Expanded(

@@ -170,7 +170,7 @@ class _HomePortfolioCardState extends State<HomePortfolioCard> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
-        color: context.color.backgroundCard,
+        color: context.color.card,
       ),
       child: SingleChildScrollView(
         child: Column(

@@ -56,7 +56,7 @@ class TrashHomeView extends HookWidget {
                           Container(
                             height: 10.sp,
                             width: double.infinity,
-                            color: context.color.backgroundCard,
+                            color: context.color.card,
                           )
                         },
                       ],

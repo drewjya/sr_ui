@@ -1,4 +1,5 @@
 import 'package:sr_ui/core/core.dart';
+
 class BottomCardItem {
   final SvgGenImage asset;
   final String title;
@@ -9,7 +10,6 @@ class BottomCardItem {
     required this.routeName,
   });
 }
-
 
 class BottomCardWidget extends StatelessWidget {
   final SvgGenImage asset;
@@ -29,7 +29,7 @@ class BottomCardWidget extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: Ink(
-          color: context.color.backgroundCard,
+          color: context.color.card,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

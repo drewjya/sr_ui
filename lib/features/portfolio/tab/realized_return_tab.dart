@@ -37,12 +37,17 @@ class RealizedReturnTab extends StatelessWidget {
     //   child: emptyWidget,
     // );
 
-    return SliverList.builder(
+    return SliverList.separated(
+      itemCount: 30,
+      separatorBuilder: (context, index) {
+        return Gap(15.sp);
+      },
       itemBuilder: (context, index) {
         return Padding(
           padding: EdgeInsets.symmetric(
             horizontal: 20.sp,
-            vertical: 15.sp,
+          ).copyWith(
+            bottom: 15.sp,
           ),
           child: Row(
             children: [

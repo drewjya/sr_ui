@@ -16,7 +16,7 @@ class ProfileCard extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          color: context.color.backgroundCard,
+          color: context.color.card,
         ),
         child: Column(
           children: [
@@ -44,7 +44,7 @@ class ProfileCard extends StatelessWidget {
                       padding: 5.6.all,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: context.color.backgroundCard.withBlue(221),
+                          color: context.color.card.withBlue(221),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Image.network(
@@ -66,8 +66,8 @@ class ProfileCard extends StatelessWidget {
                             children: [
                               VText(
                                 "Ratna Wilandari",
-                                style:
-                                    context.text.title.copyWith(fontSize: 16.sp),
+                                style: context.text.title
+                                    .copyWith(fontSize: 16.sp),
                               ),
                             ],
                           ),

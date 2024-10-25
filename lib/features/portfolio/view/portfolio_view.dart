@@ -25,7 +25,7 @@ class PortfolioView extends HookConsumerWidget {
         child: Container(
           height: context.height * 0.5,
           width: double.infinity,
-          color: context.color.backgroundCard,
+          color: context.color.card,
         ),
       ),
       onBack: () => ref.pop(),
@@ -69,7 +69,7 @@ class PortfolioView extends HookConsumerWidget {
                       borderRadius: BorderRadiusDirectional.vertical(
                         top: Radius.circular(20),
                       ),
-                      color: context.color.backgroundCard,
+                      color: context.color.card,
                     ),
                     padding: EdgeInsets.only(top: 10.sp),
                     clipBehavior: Clip.antiAlias,
@@ -78,23 +78,19 @@ class PortfolioView extends HookConsumerWidget {
                 ],
               ),
             ),
-            DecoratedSliver(
-              decoration: BoxDecoration(
-                color: context.color.backgroundCard,
+            if (selected.value == 1)
+              DecoratedSliver(
+                decoration: BoxDecoration(
+                  color: context.color.card,
+                ),
+                sliver: SliverPinnedHeader(
+                  child: RealizedReturnAction(),
+                ),
               ),
-              sliver: SliverAnimatedSwitcher(
-                child: selected.value == 1
-                    ? SliverPinnedHeader(
-                        child: RealizedReturnAction(),
-                      )
-                    : SliverToBoxAdapter(),
-                duration: Durations.medium1,
-              ),
-            ),
             SliverClip(
               child: DecoratedSliver(
                 decoration: BoxDecoration(
-                  color: context.color.backgroundCard,
+                  color: context.color.card,
                 ),
                 sliver: SliverAnimatedSwitcher(
                   child: [
@@ -103,6 +99,15 @@ class PortfolioView extends HookConsumerWidget {
                   ][selected.value],
                   duration: Durations.medium1,
                 ),
+              ),
+            ),
+            DecoratedSliver(
+              decoration: BoxDecoration(
+                color: context.color.card,
+              ),
+              sliver: SliverFillRemaining(
+                hasScrollBody: false,
+                child: SizedBox(),
               ),
             ),
           ],

@@ -52,7 +52,7 @@ class HomeView extends HookConsumerWidget {
                       Container(
                         height: 10.sp,
                         width: double.infinity,
-                        color: context.color.backgroundCard,
+                        color: context.color.card,
                       )
                     },
                   ],
@@ -60,7 +60,7 @@ class HomeView extends HookConsumerWidget {
                 SliverClip(
                   child: DecoratedSliver(
                     decoration: BoxDecoration(
-                      color: context.color.backgroundCard,
+                      color: context.color.card,
                     ),
                     sliver: SliverAnimatedSwitcher(
                       child: [

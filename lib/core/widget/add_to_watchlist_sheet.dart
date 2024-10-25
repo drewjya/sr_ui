@@ -20,7 +20,7 @@ class AddToWatchlistSheet extends StatelessWidget {
               SliverPinnedHeader(
                 child: Container(
                   decoration: BoxDecoration(
-                    color: context.color.backgroundCard,
+                    color: context.color.card,
                   ),
                   padding:
                       EdgeInsets.symmetric(vertical: 15.sp, horizontal: 20.sp),
@@ -40,7 +40,7 @@ class AddToWatchlistSheet extends StatelessWidget {
               SliverClip(
                 child: DecoratedSliver(
                   decoration: BoxDecoration(
-                    color: context.color.backgroundCard,
+                    color: context.color.card,
                   ),
                   sliver: SliverList.separated(
                     itemCount: 10,
@@ -49,7 +49,7 @@ class AddToWatchlistSheet extends StatelessWidget {
                       bool bookmark = false;
                       return StatefulBuilder(builder: (context, setState) {
                         return WatchlistTile(
-                          backgroundColor: context.color.backgroundCard,
+                          backgroundColor: context.color.card,
                           stockCode: "Wathclist 1",
                           companyName: "21 stocks",
                           trailing: Button.secondary(
@@ -77,7 +77,7 @@ class AddToWatchlistSheet extends StatelessWidget {
           ),
         ),
         Container(
-          color: context.color.backgroundCard,
+          color: context.color.card,
           padding: EdgeInsets.symmetric(
             horizontal: 15.sp,
             vertical: 15.sp,

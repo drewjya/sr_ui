@@ -8,7 +8,7 @@ class CreateWatchlistSheet extends StatelessWidget {
     return LayoutBuilder(builder: (context, constraints) {
       return Container(
         decoration: BoxDecoration(
-          color: context.color.backgroundCard,
+          color: context.color.card,
           borderRadius: BorderRadius.vertical(
             top: Radius.circular(40),
           ),

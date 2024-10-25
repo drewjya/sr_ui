@@ -56,6 +56,9 @@ class $AssetsIconGen {
   SvgGenImage get communityInactive =>
       const SvgGenImage('assets/icon/community_inactive.svg');
 
+  /// File path: assets/icon/danger.svg
+  SvgGenImage get danger => const SvgGenImage('assets/icon/danger.svg');
+
   /// File path: assets/icon/delete.svg
   SvgGenImage get delete => const SvgGenImage('assets/icon/delete.svg');
 
@@ -210,6 +213,7 @@ class $AssetsIconGen {
         chip,
         community,
         communityInactive,
+        danger,
         delete,
         dictionary,
         drag,

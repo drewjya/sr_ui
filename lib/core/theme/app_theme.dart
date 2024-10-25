@@ -106,6 +106,7 @@ class AppTheme with ChangeNotifier {
   static final _lightAppColors = AppColorsExtension(
     primaryButton: AppColor.primaryButton,
     primary: AppColor.primary,
+    cardBackground: AppColor.backgroundCard,
     textPrimary: Colors.white,
     divider: AppColor.divider,
     grey: AppColor.grey,
@@ -113,7 +114,7 @@ class AppTheme with ChangeNotifier {
     chipFill: AppColor.chipFillDark,
     error: AppColor.error,
     background: AppColor.background,
-    backgroundCard: AppColor.backgroundBox,
+    card: AppColor.card,
     srIcon: AppColor.srIconDark,
     textFieldColor: AppColor.textFieldColor,
   );
@@ -122,20 +123,21 @@ class AppTheme with ChangeNotifier {
     primaryButton: AppColor.primaryButton,
     primary: AppColor.primary,
     textPrimary: Colors.white,
+    cardBackground: AppColor.backgroundCard,
     divider: AppColor.divider,
     grey: AppColor.grey,
     textCard: Colors.white,
     chipFill: AppColor.chipFillDark,
     error: AppColor.error,
     background: AppColor.background,
-    backgroundCard: AppColor.backgroundBox,
+    card: AppColor.card,
     srIcon: AppColor.srIconDark,
     textFieldColor: AppColor.textFieldColor,
   );
 
   static final _buttonExtension = AppButtonExtension(
     cardButton: ButtonDecoration(
-      backgroundColor: AppColor.backgroundBox,
+      backgroundColor: AppColor.card,
       borderRadius: BorderRadius.circular(20),
       padding: 10.all,
       splashColor: AppColor.backgroundRipple,
@@ -198,11 +200,10 @@ class AppTheme with ChangeNotifier {
     iconTheme: IconThemeData(
       color: Colors.white,
     ),
-    
     switchTheme: SwitchThemeData(
       // inactiveTrackColor: AppColor.divider,
       // activeTrackColor: AppColor.primary,
-      
+
       thumbColor: WidgetStatePropertyAll(Colors.white),
     ),
     checkboxTheme: CheckboxThemeData(

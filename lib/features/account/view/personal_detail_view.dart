@@ -1,71 +1,182 @@
 import 'package:sr_ui/core/core.dart';
+import 'package:sr_ui/features/account/widget/personal_detail_image.dart';
+import 'package:sr_ui/features/account/widget/personal_widget_item.dart';
 
-class PersonalDetailView extends StatelessWidget {
+class PersonalDetailView extends HookConsumerWidget {
   const PersonalDetailView({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final userController = useTextEditingController();
+    final phoneController = useTextEditingController();
+    final emailController = useTextEditingController();
+    final formKey = useMemoized(() => GlobalKey<FormState>(), []);
     return ScaffoldBasic(
       titleText: "PERSONAL DETAILS",
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
+      body: Stack(
         children: [
-          Gap(20),
-          Container(
-            height: (89.6 + 5.6).sp,
-            width: (89.6 + 5.6 + 20).sp,
-            child: Stack(
-              children: [
-                Center(
-                  child: CustomPaint(
-                    painter: BorderGradientPainer(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Colors.white.withOpacity(0.15),
-                          Colors.white.withOpacity(0.6),
-                          Colors.white.withOpacity(0.6),
-                          Colors.white.withOpacity(0.15),
-                        ],
-                        stops: [0.0, 0.4, 0.6, 1.0],
-                      ),
-                      borderRadius: 12,
-                      strokeWidth: 2,
-                    ),
-                    child: Padding(
-                      padding: 5.6.all,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: context.color.backgroundCard.withBlue(221),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Image.network(
-                          networkImage,
-                          height: 84.sp,
-                          width: 84.sp,
-                        ),
-                      ),
-                    ),
+          CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: Column(
+                  children: [
+                    Gap(15.sp),
+                    PersonalDetailImage(),
+                    Gap(15.sp),
+                  ],
+                ),
+              ),
+              DecoratedSliver(
+                decoration: BoxDecoration(
+                  color: context.color.card,
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(20),
                   ),
                 ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Button.secondary(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 6.67.sp,
-                      vertical: 7.5.sp,
-                    ),
-                    backgroundColor: context.color.primary,
-                    borderRadius: BorderRadius.circular(5),
-                    onTap: () {},
-                    child: Assets.icon.camera.svg(
-                      height: 15.sp,
-                      width: 17.sp,
-                    ),
+                sliver: SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Column(
+                    children: [
+                      Form(
+                        key: formKey,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Gap(15.sp),
+                            Padding(
+                              padding: 20.horizontal,
+                              child: VText(
+                                "Basic Information",
+                                style: context.text.title.copyWith(
+                                  fontWeight: FontWeight.w800,
+                                  fontSize: 20.sp,
+                                ),
+                              ),
+                            ),
+                            Gap(15.sp),
+                            Padding(
+                              padding: 20.horizontal,
+                              child: VTextInput(
+                                title: "Username",
+                                controller: userController,
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                validator: (value) {
+                                  return value == null || value.length < 10
+                                      ? "Ayam ahhsa"
+                                      : null;
+                                },
+                              ),
+                            ),
+                            Gap(15.sp),
+                            Padding(
+                              padding: 20.horizontal,
+                              child: VTextInput(
+                                title: "Mobile Number",
+                                controller: phoneController,
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                validator: (value) {
+                                  return value == null || value.length < 10
+                                      ? "Ayam ahhsa"
+                                      : null;
+                                },
+                              ),
+                            ),
+                            Gap(15.sp),
+                            Padding(
+                              padding: 20.horizontal,
+                              child: VTextInput(
+                                title: "Email Address",
+                                controller: emailController,
+                                autovalidateMode:
+                                    AutovalidateMode.onUserInteraction,
+                                validator: (value) {
+                                  return value == null || value.length < 10
+                                      ? "Ayam ahhsa"
+                                      : null;
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Gap(30.sp),
+                      Padding(
+                        padding: 20.horizontal,
+                        child: VColumn(
+                          gap: Gap(15.sp),
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                VText(
+                                  "Update Your Personal Data",
+                                  style: context.text.title.copyWith(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 20.sp,
+                                  ),
+                                ),
+                                VText(
+                                  "According to OJK regulations, you are required to update your data. Please update your data if there is any data that has changed.",
+                                  style: context.text.subtitle,
+                                ),
+                              ],
+                            ),
+                            PersonalWidgetItem(
+                              title: "Full Name According To E-KTP",
+                              value: "Ratna Wulandari",
+                            ),
+                            PersonalWidgetItem(
+                              title: "E-KTP Number",
+                              value: "1234567890123456",
+                            ),
+                            PersonalWidgetItem(
+                              title: "Regency/City Place Of Birth",
+                              value: "Kalianda",
+                            ),
+                            PersonalWidgetItem(
+                              title: "Date Of Birth",
+                              value: "12-06-1999",
+                            ),
+                            PersonalWidgetItem(
+                              title: "Gender",
+                              value: "Man",
+                            ),
+                            PersonalWidgetItem(
+                              title: "Religion",
+                              value: "Islam",
+                            ),
+                            PersonalWidgetItem(
+                              title: "Marital Status",
+                              value: "Not Married Yet",
+                            ),
+                            PersonalWidgetItem(
+                              title: "Current Mailing Address",
+                              value: "Accordingly To KTP",
+                            ),
+                          ],
+                        ),
+                      ),
+                      Gap(75.sp),
+                    ],
                   ),
                 ),
-              ],
+              ),
+            ],
+          ),
+          Align(
+            alignment: Alignment(0.0, 0.925),
+            child: Padding(
+              padding: 20.horizontal,
+              child: ElevatedButton(
+                onPressed: () {
+                  formKey.currentState?.validate();
+                },
+                child: Center(
+                  child: Text("SAVE"),
+                ),
+              ),
             ),
           ),
         ],

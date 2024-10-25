@@ -33,93 +33,97 @@ class ScaffoldBasic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     uiOverlay();
-    return Scaffold(
-      backgroundColor: context.color.background,
-      body: Container(
-        color: context.color.background,
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            return Stack(
-              children: [
-                Container(
-                  height: constraints.maxHeight * 0.25,
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Color.fromRGBO(
-                            49, 91, 240, 0.6), // rgba(49, 91, 240, 0.6)
-                        Color.fromRGBO(49, 91, 240, 0), // rgba(49, 91, 240, 0)
-                      ],
-                      stops: [0.0, 1.0],
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Scaffold(
+        backgroundColor: context.color.background,
+        body: Container(
+          color: context.color.background,
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return Stack(
+                children: [
+                  Container(
+                    height: constraints.maxHeight * 0.25,
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Color.fromRGBO(
+                              49, 91, 240, 0.6), // rgba(49, 91, 240, 0.6)
+                          Color.fromRGBO(
+                              49, 91, 240, 0), // rgba(49, 91, 240, 0)
+                        ],
+                        stops: [0.0, 1.0],
+                      ),
                     ),
                   ),
-                ),
-                if (background != null) background!,
-                Padding(
-                  padding: EdgeInsets.only(top: context.top),
-                  child: Column(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.symmetric(vertical: 8.sp),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20.0.sp)
-                              .copyWith(
-                                  left: 15.sp,
-                                  right: actions.isNotEmpty ? 15.sp : 20.sp),
-                          child: Row(
-                            children: [
-                              // Icon(Icons.arro),
-                              leading ??
-                                  Consumer(
-                                    builder: (context, ref, child) {
-                                      return Material(
-                                        color: Colors.transparent,
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        clipBehavior: Clip.antiAlias,
-                                        child: InkWell(
-                                          onTap: onBack ?? () => ref.pop(),
-                                          child: Ink(
-                                            padding: EdgeInsets.all(5.sp),
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(100),
-                                            ),
-                                            child: Assets.icon.arrowLeft.svg(
-                                              height: 24.sp,
-                                              width: 24.sp,
+                  if (background != null) background!,
+                  Padding(
+                    padding: EdgeInsets.only(top: context.top),
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.symmetric(vertical: 8.sp),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 20.0.sp)
+                                .copyWith(
+                                    left: 15.sp,
+                                    right: actions.isNotEmpty ? 15.sp : 20.sp),
+                            child: Row(
+                              children: [
+                                // Icon(Icons.arro),
+                                leading ??
+                                    Consumer(
+                                      builder: (context, ref, child) {
+                                        return Material(
+                                          color: Colors.transparent,
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                          clipBehavior: Clip.antiAlias,
+                                          child: InkWell(
+                                            onTap: onBack ?? () => ref.pop(),
+                                            child: Ink(
+                                              padding: EdgeInsets.all(5.sp),
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(100),
+                                              ),
+                                              child: Assets.icon.arrowLeft.svg(
+                                                height: 24.sp,
+                                                width: 24.sp,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                              if (title == null) Gap(15),
-                              Expanded(
-                                child: title ??
-                                    VText(
-                                      titleText,
-                                      fontSize: 20.sp,
-                                      fontWeight: FontWeight.w900,
+                                        );
+                                      },
                                     ),
-                              ),
-                              if (actions.isNotEmpty)
-                                Row(
-                                  children: actions,
-                                )
-                            ],
+                                if (title == null) Gap(15),
+                                Expanded(
+                                  child: title ??
+                                      VText(
+                                        titleText,
+                                        fontSize: 20.sp,
+                                        fontWeight: FontWeight.w900,
+                                      ),
+                                ),
+                                if (actions.isNotEmpty)
+                                  Row(
+                                    children: actions,
+                                  )
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      Expanded(child: body),
-                    ],
-                  ),
-                )
-              ],
-            );
-          },
+                        Expanded(child: body),
+                      ],
+                    ),
+                  )
+                ],
+              );
+            },
+          ),
         ),
       ),
     );

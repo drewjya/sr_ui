@@ -41,7 +41,7 @@ class _BottomNavState extends ConsumerState<BottomNav> {
       padding: EdgeInsets.all(0),
       height: max(57.5.sp, 60),
       notchMargin: 0,
-      color: context.color.backgroundCard,
+      color: context.color.card,
       child: Container(
         // padding: EdgeInsets.symmetric( horizontal: 16),
         clipBehavior: Clip.antiAlias,

@@ -87,7 +87,7 @@ class NotificationView extends HookConsumerWidget {
                             duration: Durations.short4,
                             decoration: BoxDecoration(
                               color: e['title'] == 'BBRI'
-                                  ? context.color.backgroundCard
+                                  ? context.color.card
                                   : null,
                             ),
                             padding: EdgeInsets.symmetric(

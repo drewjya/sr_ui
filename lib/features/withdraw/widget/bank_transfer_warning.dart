@@ -8,7 +8,7 @@ class BankTransferWarning extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: context.color.backgroundCard,
+        color: context.color.card,
         borderRadius: BorderRadius.circular(20),
       ),
       clipBehavior: Clip.antiAlias,

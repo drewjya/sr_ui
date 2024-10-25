@@ -24,7 +24,7 @@ class WithdrawView extends ConsumerWidget {
                 Container(
                   margin: 20.horizontal,
                   decoration: BoxDecoration(
-                    color: context.color.backgroundCard,
+                    color: context.color.card,
                   ),
                   padding: 10.all,
                   child: Column(
@@ -80,7 +80,7 @@ class WithdrawView extends ConsumerWidget {
           ),
           DecoratedSliver(
             decoration: BoxDecoration(
-              color: context.color.backgroundCard,
+              color: context.color.card,
               borderRadius: BorderRadius.vertical(
                 top: Radius.circular(30),
               ),
@@ -97,7 +97,7 @@ class WithdrawView extends ConsumerWidget {
           ),
           DecoratedSliver(
             decoration: BoxDecoration(
-              color: context.color.backgroundCard,
+              color: context.color.card,
               borderRadius: BorderRadius.vertical(
                 top: Radius.circular(30),
               ),
@@ -125,7 +125,7 @@ class WithdrawView extends ConsumerWidget {
           ),
           DecoratedSliver(
             decoration: BoxDecoration(
-              color: context.color.backgroundCard,
+              color: context.color.card,
               borderRadius: BorderRadius.vertical(
                 top: Radius.circular(30),
               ),

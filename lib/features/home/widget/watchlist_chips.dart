@@ -43,7 +43,7 @@ class _WatchlistChipsState extends State<WatchlistChips> {
         final double elevation = lerpDouble(0, 6, animValue)!;
         return Material(
           elevation: elevation,
-          shadowColor: context.color.backgroundCard.withOpacity(0.1),
+          shadowColor: context.color.card.withOpacity(0.1),
           child: child,
         );
       },
@@ -57,7 +57,7 @@ class _WatchlistChipsState extends State<WatchlistChips> {
     log("Rebuild too");
     return Container(
       height: (34).sp,
-      color: context.color.backgroundCard,
+      color: context.color.card,
       child: Row(
         children: [
           Gap(20.sp),
@@ -197,7 +197,7 @@ class WatchlistChipItem extends ConsumerWidget {
         ref.watch(selectedWatchlistProvider.select((value) => value == item));
 
     return Container(
-      color: context.color.backgroundCard,
+      color: context.color.card,
       padding: EdgeInsets.only(right: end ? 0 : 8.sp),
       key: Key(item),
       child: MenuAnchor(

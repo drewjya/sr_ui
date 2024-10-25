@@ -11,8 +11,8 @@ class RealizedReturnAction extends StatelessWidget {
       padding: EdgeInsets.symmetric(
         horizontal: 20.sp,
         vertical: 15.sp,
-      ).copyWith(bottom: 0),
-      color: context.color.backgroundCard,
+      ).copyWith(bottom: 15.sp),
+      color: context.color.card,
       child: Row(
         children: [
           Expanded(

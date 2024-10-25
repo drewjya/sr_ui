@@ -8,7 +8,8 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     required this.textCard,
     required this.error,
     required this.background,
-    required this.backgroundCard,
+    required this.card,
+    required this.cardBackground,
     required this.srIcon,
     required this.primaryButton,
     required this.grey,
@@ -24,7 +25,8 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
   final Color error;
   final Color srIcon;
   final Color background;
-  final Color backgroundCard;
+  final Color card;
+  final Color cardBackground;
   final Color primaryButton;
   final Color chipFill;
   final Color textFieldColor;
@@ -40,22 +42,24 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     Color? error,
     Color? grey,
     Color? background,
-    Color? backgroundCard,
+    Color? card,
+    Color? cardBackground,
     Color? srIcon,
     Color? primaryButton,
   }) {
     return AppColorsExtension(
-      grey: grey??this.grey,
-      chipFill: chipFill??this.chipFill,
-      textFieldColor : textFieldColor??this.textFieldColor,
-      primaryButton: primaryButton??this.primaryButton,
+      grey: grey ?? this.grey,
+      cardBackground: cardBackground ?? this.cardBackground,
+      chipFill: chipFill ?? this.chipFill,
+      textFieldColor: textFieldColor ?? this.textFieldColor,
+      primaryButton: primaryButton ?? this.primaryButton,
       primary: primary ?? this.primary,
       textPrimary: textPrimary ?? this.textPrimary,
       divider: divider ?? this.divider,
       textCard: textCard ?? this.textCard,
       error: error ?? this.error,
       background: background ?? this.background,
-      backgroundCard: backgroundCard ?? this.backgroundCard,
+      card: card ?? this.card,
       srIcon: srIcon ?? this.srIcon,
     );
   }
@@ -70,7 +74,6 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     }
 
     return AppColorsExtension(
-
       textFieldColor: Color.lerp(textFieldColor, other.textFieldColor, t)!,
       primaryButton: Color.lerp(primaryButton, other.primaryButton, t)!,
       chipFill: Color.lerp(chipFill, other.chipFill, t)!,
@@ -81,7 +84,8 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
       textCard: Color.lerp(textCard, other.textCard, t)!,
       error: Color.lerp(error, other.error, t)!,
       background: Color.lerp(background, other.background, t)!,
-      backgroundCard: Color.lerp(backgroundCard, other.backgroundCard, t)!,
+      card: Color.lerp(card, other.card, t)!,
+      cardBackground: Color.lerp(cardBackground, other.cardBackground, t)!,
       srIcon: Color.lerp(srIcon, other.srIcon, t)!,
     );
   }
@@ -99,7 +103,7 @@ extension ColorSchemeBuilder on AppColorsExtension {
       error: error,
       onError: error,
       surface: background,
-      onSurface: backgroundCard,
+      onSurface: card,
     );
   }
 }

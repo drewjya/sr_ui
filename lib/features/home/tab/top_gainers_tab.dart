@@ -13,7 +13,7 @@ class TopGainersTab extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     if (!sliver) {
       return AnimatedContainer(
-        color: context.color.backgroundCard,
+        color: context.color.card,
         duration: Durations.short1,
         child: ListView.separated(
           controller: controller,

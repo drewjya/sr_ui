@@ -155,7 +155,7 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
               borderRadius: BorderRadius.vertical(
                 top: Radius.circular(20),
               ),
-              color: context.color.backgroundCard,
+              color: context.color.card,
             ),
             sliver: SliverList.builder(
               itemCount: item.length,
@@ -170,7 +170,7 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
                               curr.onTap?.call();
                             }
                           : null,
-                      backgroundColor: context.color.backgroundCard,
+                      backgroundColor: context.color.card,
                       borderRadius: index == 0
                           ? BorderRadius.vertical(
                               top: Radius.circular(20),
@@ -222,7 +222,7 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
           ),
           DecoratedSliver(
             decoration: BoxDecoration(
-              color: context.color.backgroundCard,
+              color: context.color.card,
             ),
             sliver: SliverFillRemaining(
               hasScrollBody: false,

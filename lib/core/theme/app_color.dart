@@ -6,7 +6,7 @@ abstract class AppColor {
 
   static const background = Color(0xff020212);
 
-  static const backgroundBox = Color(0xff101532);
+  static const card = Color(0xff101532);
   static const backgroundRipple = Color(0xff2A3A59);
 
   static const error = Color(0xffF33B39);
@@ -16,6 +16,7 @@ abstract class AppColor {
   static const hintTitle = Color(0xffC4C4C4);
   static const grey = Color(0xffA5ABBF);
 
+  static const cardGrey = Color(0xffA7A5A9);
   static const divider = Color.fromRGBO(255, 255, 255, 0.1);
 
   static const srIcon = Color(0xffA9C0FF);
@@ -26,4 +27,6 @@ abstract class AppColor {
   static const chipFillDark = Color(0xff172358);
   static const textFieldColor = Color(0xff1c213c);
   static const borderTextField = Color(0x15FFFFff);
+
+  static const backgroundCard = Color(0xff231F27);
 }

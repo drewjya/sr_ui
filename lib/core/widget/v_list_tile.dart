@@ -35,7 +35,7 @@ class VListTile extends StatelessWidget {
         splashColor: AppColor.backgroundRipple,
         highlightColor: AppColor.backgroundRipple,
         child: Ink(
-          color: backgroundColor ?? context.color.backgroundCard,
+          color: backgroundColor ?? context.color.card,
           padding: padding ??
               EdgeInsets.symmetric(
                 vertical: 10.sp,

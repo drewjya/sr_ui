@@ -11,7 +11,7 @@ class TopUpCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
-        color: context.color.backgroundCard,
+        color: context.color.card,
       ),
       child: Column(
         children: [

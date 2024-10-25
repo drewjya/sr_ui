@@ -32,7 +32,7 @@ class HomeTabList extends ConsumerWidget {
             top: Radius.circular(20),
           ),
         ),
-        color: context.color.backgroundCard,
+        color: context.color.card,
       ),
       child: TabBar(
         onTap: onTap,

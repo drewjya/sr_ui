@@ -10,7 +10,7 @@ class RealizedReturnSheet extends HookWidget {
   Widget build(BuildContext context) {
     final selected = useState(0);
     return Container(
-      color: context.color.backgroundCard,
+      color: context.color.card,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -169,7 +169,7 @@ class RealizedReturnSheet extends HookWidget {
             ),
           ),
           Container(
-            color: context.color.backgroundCard,
+            color: context.color.card,
             padding: EdgeInsets.symmetric(
               horizontal: 15.sp,
               vertical: 15.sp,
