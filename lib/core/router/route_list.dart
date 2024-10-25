@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:sr_ui/core/navigation/view/navigation_view.dart';
 import 'package:sr_ui/core/router/go_router.dart';
@@ -8,8 +9,10 @@ import 'package:sr_ui/core/router/route_path.dart';
 import 'package:sr_ui/core/start/view/splash_view.dart';
 import 'package:sr_ui/core/start/widget/app_startup_widget.dart';
 import 'package:sr_ui/features/account/view/login_view.dart';
+import 'package:sr_ui/features/account/view/personal_detail_view.dart';
 import 'package:sr_ui/features/community/view/community_view.dart';
 import 'package:sr_ui/features/market/view/market_view.dart';
+import 'package:sr_ui/features/mutasi/view/mutasi_view.dart';
 import 'package:sr_ui/features/notification/view/notification_view.dart';
 import 'package:sr_ui/features/order/view/order_view.dart';
 import 'package:sr_ui/features/portfolio/view/portfolio_view.dart';
@@ -27,7 +30,7 @@ import '../../features/home/view/view.dart';
 part 'route_list.g.dart';
 
 @Riverpod(keepAlive: true)
-List<RouteBase> routeList(RouteListRef ref) {
+List<RouteBase> routeList(Ref ref) {
   return [
     GoRoute(
       path: Routes.startup,
@@ -50,10 +53,28 @@ List<RouteBase> routeList(RouteListRef ref) {
       ),
     ),
     GoRoute(
+      path: Routes.personalDetail,
+      pageBuilder: (context, state) {
+        return MaterialPage(
+          child: const PersonalDetailView(),
+          key: state.pageKey,
+        );
+      },
+    ),
+    GoRoute(
       path: Routes.topUpScreen,
       pageBuilder: (context, state) {
         return MaterialPage(
           child: const TopUpView(),
+          key: state.pageKey,
+        );
+      },
+    ),
+    GoRoute(
+      path: Routes.mutasi,
+      pageBuilder: (context, state) {
+        return MaterialPage(
+          child: const MutasiView(),
           key: state.pageKey,
         );
       },

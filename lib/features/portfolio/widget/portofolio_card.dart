@@ -1,45 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:sr_ui/core/core.dart';
 
-class _ItemData extends StatelessWidget {
-  final String title;
-  final double? totalValue;
-  final Widget? value;
-  const _ItemData({
-    Key? key,
-    required this.title,
-    this.totalValue,
-    this.value,
-  })  : assert(
-            (value != null && totalValue == null) ||
-                (value == null && totalValue != null),
-            'Either titleText or title must be provided, but not both, and at least one must be non-null'),
-        super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15.sp, vertical: 10.sp),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          VText(
-            title,
-            fontWeight: FontWeight.w500,
-            fontSize: 14.sp,
-            color: context.color.grey,
-          ),
-          Gap(10.sp),
-          value ??
-              VText(
-                "Rp" + "${totalValue!}".currency,
-                fontWeight: FontWeight.w600,
-                fontSize: 16.sp,
-              )
-        ],
-      ),
-    );
-  }
-}
 
 class PortfolioCard extends StatelessWidget {
   const PortfolioCard({
@@ -66,13 +27,13 @@ class PortfolioCard extends StatelessWidget {
               ),
               children: [
                 Expanded(
-                  child: _ItemData(
+                  child: ItemTitle(
                     title: "Total Assets",
                     totalValue: 10000,
                   ),
                 ),
                 Expanded(
-                  child: _ItemData(
+                  child: ItemTitle(
                     title: "Total Assets",
                     totalValue: 10000,
                   ),
@@ -90,13 +51,13 @@ class PortfolioCard extends StatelessWidget {
               ),
               children: [
                 Expanded(
-                  child: _ItemData(
+                  child: ItemTitle(
                     title: "Total Assets",
                     totalValue: 10000,
                   ),
                 ),
                 Expanded(
-                  child: _ItemData(
+                  child: ItemTitle(
                     title: "Total Assets",
                     totalValue: 10000,
                   ),

@@ -39,17 +39,19 @@ abstract class Routes {
   static const loginPin = "/loginPin";
   static const loginInvestScreen = "/loginInvestScreen";
 
-  static const topUpScreen = '/top-up';
+  static const topUpScreen = '/top_up';
   static const withdraw = '/withdraw';
-  static const bankTransfers = '/bank-transfers';
+  static const bankTransfers = '/bank_transfers';
 
   static const changePinScreen = "/change_pin";
 
   static const changePasswordInvestScreen = "/change_password_invest";
 
   static const shareCuan = "/share_cuan";
+  static const mutasi = "/mutasi";
   static const portfolio = "/portfolio";
   static const notifications = "/notification";
+  static const personalDetail = "/personal_detail";
 
   static String messageDialog(String message, [bool bold = false]) =>
       "/message_dialog?message=$message&bold=$bold";

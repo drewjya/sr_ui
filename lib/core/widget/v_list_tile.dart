@@ -9,6 +9,7 @@ class VListTile extends StatelessWidget {
   final Color? backgroundColor;
   final VoidCallback? onTap;
   final EdgeInsets? padding;
+  final BorderRadius? borderRadius;
 
   const VListTile({
     Key? key,
@@ -19,14 +20,18 @@ class VListTile extends StatelessWidget {
     this.backgroundColor,
     this.onTap,
     this.padding,
+    this.borderRadius,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.transparent,
+      borderRadius: borderRadius,
+      clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: onTap,
+        borderRadius: borderRadius,
         splashColor: AppColor.backgroundRipple,
         highlightColor: AppColor.backgroundRipple,
         child: Ink(

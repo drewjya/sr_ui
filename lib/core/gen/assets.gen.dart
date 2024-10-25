@@ -18,11 +18,24 @@ class $AssetsIconGen {
   /// File path: assets/icon/Noise.png
   AssetGenImage get noise => const AssetGenImage('assets/icon/Noise.png');
 
+  /// File path: assets/icon/account_security.svg
+  SvgGenImage get accountSecurity =>
+      const SvgGenImage('assets/icon/account_security.svg');
+
   /// File path: assets/icon/arrow-left.svg
   SvgGenImage get arrowLeft => const SvgGenImage('assets/icon/arrow-left.svg');
 
   /// File path: assets/icon/arrow_text.svg
   SvgGenImage get arrowText => const SvgGenImage('assets/icon/arrow_text.svg');
+
+  /// File path: assets/icon/bank.svg
+  SvgGenImage get bank => const SvgGenImage('assets/icon/bank.svg');
+
+  /// File path: assets/icon/bantuan.svg
+  SvgGenImage get bantuan => const SvgGenImage('assets/icon/bantuan.svg');
+
+  /// File path: assets/icon/beri_ide.svg
+  SvgGenImage get beriIde => const SvgGenImage('assets/icon/beri_ide.svg');
 
   /// File path: assets/icon/bookmark.svg
   SvgGenImage get bookmark => const SvgGenImage('assets/icon/bookmark.svg');
@@ -43,8 +56,15 @@ class $AssetsIconGen {
   /// File path: assets/icon/delete.svg
   SvgGenImage get delete => const SvgGenImage('assets/icon/delete.svg');
 
+  /// File path: assets/icon/dictionary.svg
+  SvgGenImage get dictionary => const SvgGenImage('assets/icon/dictionary.svg');
+
   /// File path: assets/icon/drag.svg
   SvgGenImage get drag => const SvgGenImage('assets/icon/drag.svg');
+
+  /// File path: assets/icon/e_statement.svg
+  SvgGenImage get eStatement =>
+      const SvgGenImage('assets/icon/e_statement.svg');
 
   /// File path: assets/icon/edit_watchlist.svg
   SvgGenImage get editWatchlist =>
@@ -64,9 +84,19 @@ class $AssetsIconGen {
   SvgGenImage get homeInactive =>
       const SvgGenImage('assets/icon/home_inactive.svg');
 
+  /// File path: assets/icon/ig.svg
+  SvgGenImage get ig => const SvgGenImage('assets/icon/ig.svg');
+
   /// File path: assets/icon/logo_tree_v2.svg
   SvgGenImage get logoTreeV2 =>
       const SvgGenImage('assets/icon/logo_tree_v2.svg');
+
+  /// File path: assets/icon/logout.svg
+  SvgGenImage get logout => const SvgGenImage('assets/icon/logout.svg');
+
+  /// File path: assets/icon/logout_dialog.svg
+  SvgGenImage get logoutDialog =>
+      const SvgGenImage('assets/icon/logout_dialog.svg');
 
   /// File path: assets/icon/market.svg
   SvgGenImage get market => const SvgGenImage('assets/icon/market.svg');
@@ -95,6 +125,10 @@ class $AssetsIconGen {
   /// File path: assets/icon/order_inactive.svg
   SvgGenImage get orderInactive =>
       const SvgGenImage('assets/icon/order_inactive.svg');
+
+  /// File path: assets/icon/personal_detail.svg
+  SvgGenImage get personalDetail =>
+      const SvgGenImage('assets/icon/personal_detail.svg');
 
   /// File path: assets/icon/portfolio_empty.svg
   SvgGenImage get portfolioEmpty =>
@@ -125,8 +159,18 @@ class $AssetsIconGen {
   SvgGenImage get tickDouble =>
       const SvgGenImage('assets/icon/tick-double.svg');
 
+  /// File path: assets/icon/tiktok.svg
+  SvgGenImage get tiktok => const SvgGenImage('assets/icon/tiktok.svg');
+
+  /// File path: assets/icon/tnc.svg
+  SvgGenImage get tnc => const SvgGenImage('assets/icon/tnc.svg');
+
   /// File path: assets/icon/top_up.svg
   SvgGenImage get topUp => const SvgGenImage('assets/icon/top_up.svg');
+
+  /// File path: assets/icon/transaction_summary.svg
+  SvgGenImage get transactionSummary =>
+      const SvgGenImage('assets/icon/transaction_summary.svg');
 
   /// File path: assets/icon/trash.svg
   SvgGenImage get trash => const SvgGenImage('assets/icon/trash.svg');
@@ -134,24 +178,39 @@ class $AssetsIconGen {
   /// File path: assets/icon/withdraw.svg
   SvgGenImage get withdraw => const SvgGenImage('assets/icon/withdraw.svg');
 
+  /// File path: assets/icon/x.svg
+  SvgGenImage get x => const SvgGenImage('assets/icon/x.svg');
+
+  /// File path: assets/icon/youtube.svg
+  SvgGenImage get youtube => const SvgGenImage('assets/icon/youtube.svg');
+
   /// List of all assets
   List<dynamic> get values => [
         noise,
+        accountSecurity,
         arrowLeft,
         arrowText,
+        bank,
+        bantuan,
+        beriIde,
         bookmark,
         check,
         chip,
         community,
         communityInactive,
         delete,
+        dictionary,
         drag,
+        eStatement,
         editWatchlist,
         emptyWatchlist,
         groupChat,
         home,
         homeInactive,
+        ig,
         logoTreeV2,
+        logout,
+        logoutDialog,
         market,
         marketInactive,
         more,
@@ -160,6 +219,7 @@ class $AssetsIconGen {
         noBookmark,
         order,
         orderInactive,
+        personalDetail,
         portfolioEmpty,
         portofolio,
         priceDecrease,
@@ -168,9 +228,14 @@ class $AssetsIconGen {
         share,
         srPoin,
         tickDouble,
+        tiktok,
+        tnc,
         topUp,
+        transactionSummary,
         trash,
-        withdraw
+        withdraw,
+        x,
+        youtube
       ];
 }
 

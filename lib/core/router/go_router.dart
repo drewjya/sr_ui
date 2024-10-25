@@ -13,7 +13,7 @@ final GlobalKey<NavigatorState> spaceNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'space');
 
 @Riverpod(keepAlive: true)
-GoRouter goRouter(GoRouterRef ref) {
+GoRouter goRouter(Ref ref) {
   final appStartupState = ref.watch(appStartupProvider);
   final notifier = ref.watch(routerNotifierProvider);
   return GoRouter(

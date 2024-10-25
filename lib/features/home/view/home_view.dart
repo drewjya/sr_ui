@@ -12,7 +12,6 @@ class HomeView extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scrollController = useScrollController();
-    final loginInit = useState(false);
 
     final tabController = useTabController(initialLength: 5);
     ref.listen(

@@ -198,6 +198,13 @@ class AppTheme with ChangeNotifier {
     iconTheme: IconThemeData(
       color: Colors.white,
     ),
+    
+    switchTheme: SwitchThemeData(
+      // inactiveTrackColor: AppColor.divider,
+      // activeTrackColor: AppColor.primary,
+      
+      thumbColor: WidgetStatePropertyAll(Colors.white),
+    ),
     checkboxTheme: CheckboxThemeData(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(4),
