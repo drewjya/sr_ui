@@ -16,31 +16,31 @@ class TopUpCard extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Colors.white.withOpacity(0.2),
-              Colors.white.withOpacity(0)
+              Color(0xff576265).withOpacity(0.4),
+              Color(0xff757a7b).withOpacity(0.4),
+              Color(0xff576265).withOpacity(0.4),
+              Color(0xff576265).withOpacity(0.4),
+              Color(0xff848b8a).withOpacity(0.4),
+              Color(0xff9ea1a1).withOpacity(0.4),
+              Color(0xff576265).withOpacity(0.4),
             ],
-            stops: [0, 1],
-            transform: GradientRotation(-65),
-            begin: Alignment.bottomRight,
-            end: Alignment.center,
+            begin: Alignment.bottomLeft,
+            end: Alignment(1, -0.8),
+            stops: [0.0, 0.1, 0.19, 0.46, 0.52, 0.85, 1.0],
+            transform: GradientRotation(72),
           ),
         ),
         child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Color(0xff576265).withOpacity(0.4),
-                Color(0xff757a7b).withOpacity(0.4),
-                Color(0xff576265).withOpacity(0.4),
-                Color(0xff576265).withOpacity(0.4),
-                Color(0xff848b8a).withOpacity(0.4),
-                Color(0xff9ea1a1).withOpacity(0.4),
-                Color(0xff576265).withOpacity(0.4),
+                Colors.white.withOpacity(0.2),
+                Colors.white.withOpacity(0)
               ],
-              begin: Alignment.bottomLeft,
-              end: Alignment(1, -0.8),
-              stops: [0.0, 0.1, 0.19, 0.46, 0.52, 0.85, 1.0],
-              transform: GradientRotation(72),
+              stops: [0, 1],
+              transform: GradientRotation(-65),
+              begin: Alignment.bottomRight,
+              end: Alignment.center,
             ),
           ),
           child: Container(
