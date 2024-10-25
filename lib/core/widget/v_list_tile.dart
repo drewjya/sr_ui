@@ -4,7 +4,7 @@ import 'package:sr_ui/core/core.dart';
 class VListTile extends StatelessWidget {
   final Widget? leading;
   final Widget title;
-  final Widget subtitle;
+  final Widget? subtitle;
   final Widget? trailing;
   final Color? backgroundColor;
   final VoidCallback? onTap;
@@ -15,7 +15,7 @@ class VListTile extends StatelessWidget {
     Key? key,
     this.leading,
     required this.title,
-    required this.subtitle,
+    this.subtitle,
     this.trailing,
     this.backgroundColor,
     this.onTap,
@@ -50,8 +50,10 @@ class VListTile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     title,
-                    Gap(4.sp),
-                    subtitle,
+                    if (subtitle != null) ...[
+                      Gap(4.sp),
+                      subtitle!,
+                    ],
                   ],
                 ),
               ),

@@ -231,13 +231,15 @@ class AppTheme with ChangeNotifier {
       fontFamily: 'Manrope',
     ),
     tabBarTheme: TabBarTheme(
+      dividerColor: AppColor.divider,
+      indicatorSize: TabBarIndicatorSize.tab,
+      labelPadding: EdgeInsets.symmetric(horizontal: 15.sp),
       indicator: UnderlineTabIndicator(
         borderSide: BorderSide(
           color: AppColor.primary,
           width: 3.sp,
         ),
       ),
-      labelPadding: EdgeInsets.symmetric(vertical: 10),
       labelStyle: TextStyle(
         color: Colors.white,
         fontFamily: "Manrope",
@@ -373,13 +375,15 @@ class AppTheme with ChangeNotifier {
       fontFamily: 'Manrope',
     ),
     tabBarTheme: TabBarTheme(
+      dividerColor: AppColor.divider,
+      indicatorSize: TabBarIndicatorSize.tab,
+      labelPadding: EdgeInsets.symmetric(horizontal: 15.sp),
       indicator: UnderlineTabIndicator(
         borderSide: BorderSide(
           color: AppColor.primary,
           width: 3.sp,
         ),
       ),
-      labelPadding: EdgeInsets.symmetric(vertical: 10),
       labelStyle: TextStyle(
         color: Colors.white,
         fontFamily: "Manrope",
